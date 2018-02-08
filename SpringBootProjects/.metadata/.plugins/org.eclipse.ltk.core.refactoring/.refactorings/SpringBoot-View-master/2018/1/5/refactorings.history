@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;SecondProject/src/main/java/com.secondProject.simplyProject.articles&apos;&#x0A;- Original project: &apos;SpringBoot-View-master&apos;&#x0A;- Destination element: &apos;SecondProject/src/main/java/com.secondProject.simplyProject.articles&apos;&#x0A;- Original elements:&#x0A;     com.elsoproject.domain.Story.java&#x0A;     com.elsoproject.domain.Blogger.java" description="Copy compilation units" destination="=SecondProject/src\/main\/java&lt;com.secondProject.simplyProject.articles" element1="/src\/main\/java&lt;com.elsoproject.domain{Story.java" element2="/src\/main\/java&lt;com.elsoproject.domain{Blogger.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1517439795616" units="2" version="1.0"/>
+</session>

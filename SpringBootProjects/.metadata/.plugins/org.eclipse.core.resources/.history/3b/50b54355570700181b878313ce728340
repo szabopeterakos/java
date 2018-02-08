@@ -1,0 +1,48 @@
+package com.peter.demo.controller;
+
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.peter.demo.domain.Blogger;
+import com.peter.demo.domain.Story;
+import com.peter.demo.repository.StoryRepo;
+import com.peter.demo.service.StoryService;
+
+@Controller
+public class HomeController {
+	
+	private StoryService myStoryService;
+	@Autowired
+	public void setMyStoryService(StoryService myStoryService) {
+		this.myStoryService = myStoryService;
+	}
+
+	@RequestMapping("/home")
+	public String index(Model m){
+		m.addAttribute("time", LocalDateTime.now());
+		m.addAttribute("stories", myStoryService.getStories());
+		
+		return "home";
+	}
+	
+	@RequestMapping("/user/{id}")
+	public String userWellcome(@PathVariable(value="id") String id, Model m) {
+		m.addAttribute("userID","Hello "+id+", nice to see you!");
+		return "home";
+	}
+	
+
+
+	
+	
+	
+}

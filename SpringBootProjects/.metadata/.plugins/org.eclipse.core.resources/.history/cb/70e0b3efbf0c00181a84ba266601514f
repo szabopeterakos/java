@@ -1,0 +1,8 @@
+package jdbc3;
+
+public class DB {
+	// connection létrehozésa
+	
+	
+
+}

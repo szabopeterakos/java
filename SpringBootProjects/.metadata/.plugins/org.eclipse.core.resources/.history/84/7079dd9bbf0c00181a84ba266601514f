@@ -1,0 +1,9 @@
+package jdbc3;
+
+public class jdbs3 {
+	
+	public static void main(String [] args) {
+		
+	}
+
+}

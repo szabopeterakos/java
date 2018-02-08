@@ -1,0 +1,18 @@
+package com.peter.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.peter.demo.repository.StoryRepo;
+
+@Service
+public class StoryService {
+
+	private StoryRepo myStoryRepo;
+
+	@Autowired
+	public void setMyStoryRepo(StoryRepo myStoryRepo) {
+		this.myStoryRepo = myStoryRepo;
+	}
+
+}

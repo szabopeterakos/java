@@ -1,0 +1,5 @@
+package com.peter.demo.repository;
+
+public interface StoryInterface {
+
+}

@@ -1,0 +1,3 @@
+0001||Szabó Péter||1990-03-30||Temesvári
+0002||Szabó Péter||1990-03-23||Temesvári
+0003||Szabó Péter||1990-03-23||Temesvári
