@@ -1,4 +1,6 @@
 import java.io.File;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -19,7 +21,7 @@ public class ClosestPointsFinder {
         for (int i = 0; i < lists.size(); i++) {
             for (int j = i + 1; j < lists.size(); j++) {
                 double currentDistance = Math.abs(euclideanDistance.CalculateDistanceWithList(lists.get(i), lists.get(j)));
-                //System.out.println("i==: " + i + currentDistance);
+
                 if (currentDistance < distance) {
                     distance = currentDistance;
                     first = lists.get(i);
@@ -28,24 +30,50 @@ public class ClosestPointsFinder {
             }
         }
 
-        //System.out.println(distance);
-
         List<List<Double>> resoult = new ArrayList<>();
         resoult.add(first);
         resoult.add(second);
         return resoult;
     }
 
-    private String findClosestPoints() {
+    private List<List<Double>> parseDoubleListsOfList() {
         List<List<Double>> listOfDoublesLists = lineScanner.arrayCreator(f2);
-        System.out.println(closestDoubles(listOfDoublesLists));
-
-        return "ok";
+        return listOfDoublesLists;
     }
+
+    private int findNumberOfLines(List<Double> list, List<List<Double>> lists) {
+        int number = -1;
+        for (int i = 0; i < lists.size(); i++) {
+            if (lists.get(i) == list) {
+                number = i + 1;
+            }
+        }
+        return number;
+    }
+
+    private void printer(List<List<Double>> lists, int[] indexes) {
+        for (int i = 0; i < indexes.length; i++) {
+            System.out.print(indexes[i] + ":");
+            for (Double c : lists.get(i)) {
+                BigDecimal currentValue = new BigDecimal(c.doubleValue()).setScale(0, RoundingMode.HALF_UP);
+                System.out.print(" " + currentValue);
+            }
+            System.out.println("");
+        }
+    }
+
+    public void mainLogic() {
+        List<List<Double>> allList = lineScanner.arrayCreator(f2);
+        List<List<Double>> resultLists = closestDoubles(allList);
+        int[] indexes = new int[2];
+        indexes[0] = findNumberOfLines(resultLists.get(0), allList);
+        indexes[1] = findNumberOfLines(resultLists.get(1), allList);
+        printer(resultLists, indexes);
+    }
+
 
     public static void main(String[] args) {
         ClosestPointsFinder cpf = new ClosestPointsFinder();
-        cpf.findClosestPoints();
-
+        cpf.mainLogic();
     }
 }
