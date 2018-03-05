@@ -1,3 +1,5 @@
+package closestPairOfPoints;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -130,7 +132,6 @@ public class EuclideanDistance {
         b.add(0.0);
         b.add(2.0);
         b.add(2.0);
-
 //        System.out.println(ed.CalculateDistance(a, b));
         System.out.println(ed.CalculateDistanceWithList(a, b));
     }
